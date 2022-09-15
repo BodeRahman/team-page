@@ -27,13 +27,7 @@ body #myLoaderIframe {
     z-index: 99999999;
 }
 
-header {
-    width: 100vw;
-    height: 80px;
-    z-index: 100;
-    position: fixed;
-    top: 0;
-}
+
 
 .navbar {
     background-color: #fff;
@@ -116,8 +110,7 @@ header {
 }
 
 .page {
-    width: 100vw;
-    height: 100vh;
+  
     padding-top: "80px";
     overflow: hidden;
 }
@@ -132,100 +125,135 @@ header {
     margin-bottom: 3rem;
 }
 
-.carousel img{
-    object-fit:cover;
-}
-/* Since positioning the image, we need to help out the caption */
-
-.carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
-}
-
-
-/* Declare heights because of positioning of img element */
-
-.carousel-item {
-    height: 32rem;
-}
-
-.content .heading {
-    text-align: center;
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-}
-
-.content .register {
-    padding: 0.375rem 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    line-height: 1.5;
-    border-radius: 0.5rem;
-    background-color: var(--themeColor);
-    color: #fff;
-}
-
-.sessions {
-    margin-top: 2rem;
-    margin-left: 1rem;
-    border-radius: 12px;
-    position: relative;
-}
-
-.sessions .listItem {
-    padding-bottom: 1.5rem;
-    border-left: 4px solid #ececec;
-    position: relative;
-    padding-left: 20px;
+.flip-card {
+    width: 200px;
+    height: 360px;
+    perspective: 1000px; 
+    margin-top: 10px;
     margin-left: 10px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+  
 }
-
-.sessions .listItem button {
-    margin-left: 8px;
-}
-
-.sessions .listItem.completed {
-    border-left: 4px solid var(--themeColor);
-}
-
-.sessions .listItem:last-child {
-    border-left: 4px solid transparent;
-    padding-bottom: 0;
-}
-
-.sessions .listItem:before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: #efefef;
-    box-shadow: 4px 4px 4px rgb(178, 176, 176);
-    border-radius: 50%;
+  
+  /* This container is the front and back side */
+.flip-card-inner {
     position: absolute;
-    left: -12px;
-    top: 0px;
-}
-
-.sessions .listItem.completed:before {
-    content: "\f00c";
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
-    color: #fff;
-    box-shadow: none;
-    font-size: 10px;
-    background-color: var(--themeColor);
-    box-shadow: 4px 4px 4px rgb(178, 176, 176);
+    width: 200px;
+    height: 360px;
     text-align: center;
-    line-height: 20px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    margin-left: 10px;
+  
+    border-radius: 20px;
+    
+}
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+  /* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 200px;
+    height: 360px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    color: rgb(11, 10, 10);
+    background-size: 180% 180%;
+    background-color:#bbd7f1 ;
+}
+  
+  
+.flip-card-front img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+  
+.flip-card-front i{
+    margin-top: 10px;
 }
 
-.sessions .iconBtn {
-    padding: 0.1em;
+.back {
+    margin-top: 10px;
+    padding: 5px;
 }
+
+.back p {
+    font-family: 'Satisfy', cursive;
+}
+  
+  
+.social{
+    margin-top: 5px;
+    margin-right: 18px;
+    margin-bottom: 10px;      
+}
+
+.social a{
+    text-decoration: none;
+    color:#fff;
+    margin-left: 10px;
+    font-size: 30px;    
+}
+
+.social a:hover{
+    color: #09b4ed;
+    
+}
+
+.name{
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pos{
+    font-weight: 500;
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'Pacifico', cursive;
+}
+
+.role{
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Style the back side */
+.flip-card-back {
+
+    color: black;
+    transform: rotateY(180deg);
+    
+  }
+  
+  .mansour, .abdul-moiz, .nicolas, .abdul-sami{
+    margin-top: 25px;
+  }
+  
+  .shantosh, .nabeel, .abdul-rahman{
+    margin-top: 20px;
+  }
+  .kevin, .zaid, .prince-khunt{
+    margin-top: 15px;
+  }
+  .prince-khunt{
+    margin-bottom: 20px;
+  }
+  
+  
 
 button.btn:focus {
     box-shadow: none !important;
